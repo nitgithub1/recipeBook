@@ -7,30 +7,44 @@
 //
 
 import UIKit
+import SwiftUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
+        
+         let tabbarcontroller  = UITabBarController()
+        
+        let main = Main()
+        let searchVC = SearchVC()
+        let saveVC = SaveVC()
+        let profileVC = ProfileVC()
+        
+        main.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home1"), tag: 0)
+        searchVC.tabBarItem = UITabBarItem(title: "search", image: UIImage(named: "search"), tag: 1)
+        saveVC.tabBarItem = UITabBarItem(title: "save", image: UIImage(named: "save"), tag: 2)
+        profileVC.tabBarItem = UITabBarItem(title: "profile", image: UIImage(named: "profile"), tag: 3)
+        
+        
+        tabbarcontroller.viewControllers = [main,searchVC,saveVC,profileVC]
+        
+        // Create a UINavigationController with your custom view controller as the root
+        let navigationController = UINavigationController(rootViewController: tabbarcontroller)
+        
+        // Create a UIWindow
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        
+        
         return true
     }
 
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
 
 
 }

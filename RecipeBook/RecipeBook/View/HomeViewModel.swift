@@ -10,11 +10,11 @@ import Foundation
 
 struct HomeViewModel
 {
-    var headerView : HeaderViewModel
-    var searchView : SearchBarViewModel
-    var categoryView : CategorySectionViewModel
-    var recommendedView : RecipeSectionViewModel
-    var weekRecipe : RecipeSectionViewModel
+    var headerViewModel : HeaderViewModel
+    var searchViewModel : SearchBarViewModel
+    var categoryViewModel : CategorySectionViewModel
+    var recommendedViewModel : RecipeSectionViewModel
+    var weekRecipeViewModel : RecipeSectionViewModel
     
     
 }

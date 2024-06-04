@@ -28,7 +28,9 @@ struct RecipeSectionView: View {
             {
              Text(self.viewModel.title)
                 
-                Button(viewModel.button, action : {print("")})
+                Button(viewModel.button, action : {
+                    self.viewModel.onSeeAllTap?()
+                })
             }
             
              ScrollView(.horizontal, showsIndicators: false)
@@ -37,6 +39,9 @@ struct RecipeSectionView: View {
                 {
                     ForEach(viewModel.recipeList, id: \.id) { recipe in
                     SmallRecipeCell(viewModel: recipe)
+                        .onTapGesture {
+                            self.viewModel.onRecipeTap?(recipe.id)
+                        }
                 }
             }
                 }

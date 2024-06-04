@@ -15,8 +15,8 @@ class SearchVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        let searchView = SearchView()
+        // add code to hide navigation bar
+        let searchView = DetailView()
         addHostingViewController(swiftUIView: AnyView(searchView))
         
     }

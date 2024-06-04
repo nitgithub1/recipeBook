@@ -28,7 +28,9 @@ struct SearchBarView: View {
                 RoundedRectangle(cornerRadius: 10)
                 .stroke(Color.blue)
             )
-            Button(viewModel.button, action : {print("")})
+            Button(viewModel.button, action : {
+                self.viewModel.onFilterTap?()
+            })
         }
         
         

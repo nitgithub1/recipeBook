@@ -12,4 +12,6 @@ struct SearchBarViewModel
 {
     var textField : String
     var button : String
+    
+    var onFilterTap : (()->Void)?
 }

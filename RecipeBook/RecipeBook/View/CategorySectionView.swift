@@ -23,10 +23,11 @@ struct CategorySectionView: View {
             {
               HStack
               {
-                ForEach(viewModel.categoryList, id : \.id)
-                { category in
-                  CategoryCellView(viewModel : category)
-                    
+                ForEach(viewModel.categoryList, id : \.id){ category in
+                CategoryCellView(viewModel : category)
+                  .onTapGesture {
+                       self.viewModel.onCategoryTap?(category.id)
+                    }
                 }
              }
             }

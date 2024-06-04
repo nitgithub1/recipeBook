@@ -13,4 +13,6 @@ struct CategorySectionViewModel
     var title : String
     var categoryList : [CategoryCellViewModel]
     
+    var onCategoryTap : ((String)->Void)?
+    
 }

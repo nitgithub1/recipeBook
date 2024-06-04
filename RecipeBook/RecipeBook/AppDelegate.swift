@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -20,18 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
          let tabbarcontroller  = UITabBarController()
         
-        let main = Main()
+        let homeVC = HomeVC.makeHomeViewController()
         let searchVC = SearchVC()
         let saveVC = SaveVC()
         let profileVC = ProfileVC()
         
-        main.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home1"), tag: 0)
+        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home1"), tag: 0)
         searchVC.tabBarItem = UITabBarItem(title: "search", image: UIImage(named: "search"), tag: 1)
         saveVC.tabBarItem = UITabBarItem(title: "save", image: UIImage(named: "save"), tag: 2)
         profileVC.tabBarItem = UITabBarItem(title: "profile", image: UIImage(named: "profile"), tag: 3)
         
         
-        tabbarcontroller.viewControllers = [main,searchVC,saveVC,profileVC]
+        tabbarcontroller.viewControllers = [homeVC,searchVC,saveVC,profileVC]
         
         // Create a UINavigationController with your custom view controller as the root
         let navigationController = UINavigationController(rootViewController: tabbarcontroller)

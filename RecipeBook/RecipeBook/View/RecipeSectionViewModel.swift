@@ -14,6 +14,7 @@ struct RecipeSectionViewModel
     var button : String
     var recipeList : [RecipeCellViewModel]
     
-    
+    var onSeeAllTap : (()->Void)?
+    var onRecipeTap : ((String)->Void)?
     
 }

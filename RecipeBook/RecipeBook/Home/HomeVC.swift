@@ -42,8 +42,6 @@ class HomeVC: UIViewController , HomeViewProtocol{
     func setupHomeView(viewModel : HomeViewModel)
     {
         var viewModel = viewModel
-        var homeView = HomeView(viewModel: viewModel)
-        addHostingViewController(swiftUIView: AnyView(homeView))
         
         viewModel.recommendedViewModel.onSeeAllTap = {
             self.interactor.onRecommendationSeeAllTap()
@@ -52,7 +50,13 @@ class HomeVC: UIViewController , HomeViewProtocol{
         viewModel.weekRecipeViewModel.onSeeAllTap = {
             self.interactor.onWeekRecipeSeeAllTap()
         }
+        
+        var homeView = HomeView(viewModel: viewModel)
+        addHostingViewController(swiftUIView: AnyView(homeView))
+        
     }
+    
+    
     /*
     // MARK: - Navigation
 

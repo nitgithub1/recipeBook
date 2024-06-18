@@ -18,8 +18,17 @@ class HomeInterector: HomeInteractorProtocol
         print("weekrecipe")
     }
     
+    func onRecommendationRecipeTap(recipeId : String){
+        print("recipeTap")
+    }
+    
+    func onWeekRecipeRecipeTap(recipeId : String){
+        print("recipeTap")
+    }
+    
     func onLoad() {
         presenter.onLoad()
+        ServiceHandler.shared.getRecipes(completionBlock: nil)
     }
     
     var presenter : HomePresenterProtocol

@@ -51,6 +51,19 @@ class HomeVC: UIViewController , HomeViewProtocol{
             self.interactor.onWeekRecipeSeeAllTap()
         }
         
+        viewModel.recommendedViewModel.onRecipeTap = { recipeId in
+            self.interactor.onRecommendationRecipeTap(recipeId: recipeId)
+            let detailVC = DetailVC.makeDetailViewController()
+            self.navigationController?.pushViewController(detailVC, animated: true)
+            
+        }
+        
+        viewModel.weekRecipeViewModel.onRecipeTap = { recipeId in
+            self.interactor.onWeekRecipeRecipeTap(recipeId: recipeId)
+            let detailVC = DetailVC.makeDetailViewController()
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
+        
         var homeView = HomeView(viewModel: viewModel)
         addHostingViewController(swiftUIView: AnyView(homeView))
         

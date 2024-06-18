@@ -10,8 +10,8 @@ import SwiftUI
 
 struct DetailView: View {
     
-    var viewModel = DetailViewModel(imageViewModel: ImageViewModel(imageName: "pasta"), recipeNameViewModel: RecipeNameViewModel(recipeName: "pasta", time: "time", rating: "rating"), descriptionViewModel: DescriptionViewModel(description: "description"), ingredientViewModel: IngredientViewModel(ingredients: [IngredientViewModel.Ingredient(image: "pasta", ingredient: "ingredient1", quantity: "quantity")]), directionViewModel: DirectionViewModel(directions: ["direction1","direction2"]))
-        
+    var viewModel : DetailViewModel
+    
     var body: some View {
         // add this in scroll view
         ScrollView(.vertical, showsIndicators: false)
@@ -29,8 +29,3 @@ struct DetailView: View {
     }
 }
 
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView()
-    }
-}

@@ -11,14 +11,17 @@ import SwiftUI
 
 class SearchVC: UIViewController {
 
+    //var viewModel : DetailViewModel
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        // add code to hide navigation bar
-        let searchView = DetailView()
+//         Do any additional setup after loading the view.
+//         add code to hide navigation bar
+       
+        let searchView = SearchView()
         addHostingViewController(swiftUIView: AnyView(searchView))
-        
+
     }
     
 
